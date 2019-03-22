@@ -7,6 +7,8 @@ const count = (count = init, action) => {
             return ++init;
         case types.DECREMENT:
             return --init;
+        case types.DOUBAN_LIST:
+            return action.count
         default:
             return count
     }

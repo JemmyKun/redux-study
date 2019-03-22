@@ -45,6 +45,13 @@ const todo = (data = initList, action) => {
             let activeData = [...data];
             setStorage(storageName, activeData)
             return activeData
+        case types.SEARCH_TODO:
+            let searchKey = action.searchKey;
+            let searchArr = data.filter(item => item.name.includes(searchKey));
+            if (searchKey === '') {
+                searchArr = getStorage(storageName);
+            }
+            return searchArr
         default:
             return data
     }
