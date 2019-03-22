@@ -1,0 +1,38 @@
+.App {
+  text-align: left;
+  font-size: 16px;
+  padding: 30px;
+}
+
+.page-App-header {
+  height: 60px;
+  line-height: 60px;
+  border: 1px solid #ddd;
+}
+
+.link-btn {
+  display: inline-block;
+  color: #000;
+  cursor: pointer;
+  min-width: 150px;
+  text-align: center;
+}
+
+.link-btn.active {
+  background: #1890ff;
+  color: #fff;
+}
+
+.link-btn:hover {
+  color: red;
+}
+
+.todo-item.active {
+  color: red;
+  text-decoration: line-through;
+}
+
+.todo-item {
+  cursor: pointer;
+  line-height: 24px;
+}
