@@ -10,7 +10,14 @@ const Page1 = (props) => {
 			<div className="page-content">
 				<button
 					onClick={(e) => {
-						handleDispatch({ type: 'INCREMENT' });
+						// 使用thunk,action 可以传入一个function
+						let action = (dispatch, getState) => {
+							console.log('getState===>>:', getState());
+							setTimeout(function() {
+								dispatch({ type: 'INCREMENT' });
+							}, 1000 * 3);
+						};
+						handleDispatch(action);
 					}}
 				>
 					increment+++++
