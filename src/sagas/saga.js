@@ -8,7 +8,7 @@ import {
     take
 } from 'redux-saga/effects'
 import * as actionTypes from '../actions/actionTypes';
-import fetchAsync from '../api/fetch';
+import * as Apis from '../api/doubanApi';
 
 function* decrementAsync() {
     yield delay(2 * 1000);
@@ -33,18 +33,18 @@ function* watchIncrementAsync() {
 }
 
 function* watchGetdoubanList() {
-    while (true) {
-        //监听异步请求
-        let url = 'https://api.douban.com/v2/movie/top250';
-        yield take(actionTypes.WATCH_DOUBAN_LIST); // 接收 saga 的 action
-        const res = yield call(fetchAsync, url);
-        console.log('res===>>', res);
-        let action = {
-            type: actionTypes.DOUBAN_LIST,
-            count: res.count
-        }
-        yield put(action); // 再执行reducers的action
+    //监听异步请求
+    yield take(actionTypes.WATCH_DOUBAN_LIST); // 接收 saga 的 action
+    let res = yield call(() => Apis.searchMovies());
+    console.log('res===>>', res);
+    let {
+        data
+    } = res;
+    let action = {
+        type: actionTypes.DOUBAN_LIST,
+        count: data.count
     }
+    yield put(action); // 再执行reducers的action
 }
 
 export default function* rootSaga() {

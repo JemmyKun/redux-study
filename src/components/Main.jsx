@@ -26,7 +26,7 @@ const Main = (props) => {
 			<div className="page-App-header">
 				{linkList.map((item, index) => {
 					let pathname = props.location.pathname;
-					let clName = pathname === item.path ? 'active' : '';
+					let clName = pathname === item.path || (pathname === '/' && index === 0) ? 'active' : '';
 					return (
 						<span
 							className={'link-btn ' + clName}
@@ -43,7 +43,7 @@ const Main = (props) => {
 			</div>
 			<div className="main-content">
 				<Switch>
-					<Route path="/main" exact component={Count} />
+					<Route path="/" exact component={Count} />
 					<Route path="/main/count" component={Count} />
 					<Route path="/main/todo" component={Todo} />
 					<Route path="/main/saga" component={Saga} />
