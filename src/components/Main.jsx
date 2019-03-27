@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Count from './Count';
 import Todo from './Todo';
 import Saga from './Saga';
+import Douban from './Douban';
 
 const linkList = [
 	{
@@ -17,6 +18,10 @@ const linkList = [
 	{
 		path: '/main/saga',
 		name: 'Saga'
+	},
+	{
+		path: '/main/douban',
+		name: 'Douban-api'
 	}
 ];
 
@@ -47,6 +52,7 @@ const Main = (props) => {
 					<Route path="/main/count" component={Count} />
 					<Route path="/main/todo" component={Todo} />
 					<Route path="/main/saga" component={Saga} />
+					<Route path="/main/douban" component={Douban} />
 				</Switch>
 			</div>
 		</div>

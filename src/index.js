@@ -9,12 +9,12 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
-import rootSaga from './sagas/saga';
+import rootSaga from './sagas/sagas';
 
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(rootReducers,applyMiddleware(logger,thunk,sagaMiddleware));
+const middlewares = [logger,thunk,sagaMiddleware];
+const store = createStore(rootReducers,applyMiddleware(...middlewares));
 sagaMiddleware.run(rootSaga);
-
 
 
 ReactDOM.render(

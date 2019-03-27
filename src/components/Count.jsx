@@ -29,7 +29,7 @@ const Count = (props) => {
 						handleDispatch(action);
 					}}
 				>
-					延迟3s执行INCREMENT
+					redux-thunk延迟3s执行INCREMENT
 				</button>
 				<button
 					onClick={(e) => {

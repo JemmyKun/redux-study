@@ -17,3 +17,5 @@ export const ACTIVE_TODO_ITEM = 'ACTIVE_TODO_ITEM';
 
 export const DOUBAN_LIST = 'DOUBAN_LIST';
 export const WATCH_DOUBAN_LIST = 'WATCH_DOUBAN_LIST';
+export const DOUBAN_THEATERS = 'DOUBAN_THEATERS';
+export const DOUBAN_SOON = 'DOUBAN_SOON';

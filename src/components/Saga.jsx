@@ -27,15 +27,6 @@ const Saga = (props) => {
 				>
 					saga--decrement--------
 				</button>
-				<button
-					onClick={(e) => {
-						// saga-middleware
-						let action = { type: types.WATCH_DOUBAN_LIST };
-						handleDispatch(action);
-					}}
-				>
-					get_doban_list
-				</button>
 				<h2>count:{count}</h2>
 			</div>
 		</div>
